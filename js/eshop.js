@@ -2,7 +2,9 @@ var cart={}; //моя корзина (массив)
 
 $( 'document' ).ready(function() 
 {
- loadgoods();   
+ loadgoods(); //загрузка товаров 
+ checkCart(); // проверка на наличие товаров в корзине    
+ showMiniCart();    
 });
 
 function loadgoods()
@@ -40,11 +42,30 @@ function addToCart()
     //создание локального хранлища в браузере
     // функция json.stringify() принимает массив - выдает строку
     localStorage.setItem( 'cart', JSON.stringify(cart) );
-    console.log(cart);
+    //console.log(cart);
+    showMiniCart();
 }
 
+function checkCart()
+{
+    // проверка наличия корзины в localStorage
+    // console.log (localStorage.getItem('dddd') );
+    if(localStorage.getItem('cart') != null)
+   {
+       cart = JSON.parse ( localStorage.getItem('cart') );
+   }
+}
 
-
+function showMiniCart()
+{
+    // показ содержимого корзины
+    var out = '';
+    for (var u in cart)
+    { 
+        out += u + ' -- '+cart[u]+ '<br />'; 
+    }
+    $('#mini-cart').html(out);
+}
 
 
 
