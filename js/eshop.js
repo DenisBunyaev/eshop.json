@@ -37,6 +37,9 @@ function addToCart()
    } else {
        cart [articul] = 1;
    }
+    //создание локального хранлища в браузере
+    // функция json.stringify() принимает массив - выдает строку
+    localStorage.setItem( 'cart', JSON.stringify(cart) );
     console.log(cart);
 }
 
