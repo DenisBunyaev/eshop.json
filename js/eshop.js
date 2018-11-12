@@ -58,14 +58,27 @@ function checkCart()
 
 function showMiniCart()
 {
-    // показ содержимого корзины
+    /*
+   if( $.isEmptyObject(cart) )
+        {
+            // если корзина пустая делаю вывод на экран
+           var out = 'Корзина пуста. Добавте товар в корзину. <a href="index.html"> На главную страницу </a>';
+            $('#my-cart').html(out);
+        } else {
+        var out = ''; 
+    */
+if( $.isEmptyObject(cart) ){
+    out = '';
+} else {
     var out = '';
     for (var u in cart)
     { 
-        out += u + ' -- '+cart[u]+ '<br />'; 
+        //out += u + ' -- '+cart[u]+ '<br />'; 
     }
+    out+='<br /><a href="cart.html">В корзину</a><br />';
     $('#mini-cart').html(out);
 }
+    }
 
 
 
