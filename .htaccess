@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /shop.json.local/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /shop.json.local/index.php?prm=$1 [L]

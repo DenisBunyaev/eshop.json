@@ -75,7 +75,7 @@ if( $.isEmptyObject(cart) ){
     { 
         //out += u + ' -- '+cart[u]+ '<br />'; 
     }
-    out+='<br /><a href="cart.html">В корзину</a><br />';
+    out+='<br /><a href="cart">В корзину</a><br />';
     $('#mini-cart').html(out);
 }
     }
